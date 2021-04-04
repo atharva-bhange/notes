@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
+import Search from '../Search';
+
 import Note from './Note';
 import './HomePage.scss';
 import { getAllNotes } from '../../action';
+import { Button } from 'react-bootstrap';
 
 function HomePage({ getAllNotes, notes }) {
     useEffect(getAllNotes, [getAllNotes]);
@@ -24,7 +27,11 @@ function HomePage({ getAllNotes, notes }) {
 
     return (
         <div className="homepage">
-            <div className="heading">Notes </div>
+            <div className="heading">
+                <div className="header">Notes</div>
+
+                <Search />
+            </div>
             {renderNotes()}
         </div>
     );

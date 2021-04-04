@@ -141,6 +141,7 @@ exports.searchNotes = catchAsync(async (req, res, next) => {
                 _id: 1,
                 title: 1,
                 description: 1,
+                image: 1,
             },
         },
     ]);
