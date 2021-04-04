@@ -63,3 +63,20 @@ export const deleteNote = (id) => async (dispatch) => {
         })
         .call();
 };
+
+export const updateNote = (formValues, id) => async () => {
+    let data = new FormData();
+    data.append('title', formValues.title);
+    data.append('description', formValues.description);
+    if (formValues.image) data.append('image', formValues.image);
+
+    new apiHandler(api.patch(`/notes/${id}`, data))
+        .code(200, (res) => {
+            // console.log(res);
+            history.push('/');
+        })
+        .onError((err) => {
+            console.log(err);
+        })
+        .call();
+};

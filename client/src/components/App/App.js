@@ -10,6 +10,7 @@ import HomePage from '../HomePage';
 import CreateForm from '../CreateForm';
 import reducers from '../../reducer';
 import NoteDetail from '../NoteDetail';
+import UpdateForm from '../UpdateForm';
 
 function App() {
     const store = createStore(
@@ -28,8 +29,9 @@ function App() {
                         <Route exact path="/create">
                             <CreateForm />
                         </Route>
-                        <Route exact path="/update/:id"></Route>
-                        <Route exact path="/delete/:id"></Route>
+                        <Route exact path="/update/:id">
+                            <UpdateForm />
+                        </Route>
                         <Route exact path="/note/:id">
                             <NoteDetail />
                         </Route>

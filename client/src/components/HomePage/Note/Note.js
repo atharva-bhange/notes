@@ -12,7 +12,9 @@ function Note({ title, description, deleteNote, id }) {
                 <h2>
                     <Link to={`/note/${id}`}>{title}</Link>
                 </h2>
-                <i className="fas fa-pencil-alt icon"></i>
+                <Link to={`/update/${id}`}>
+                    <i className="fas fa-pencil-alt icon"></i>
+                </Link>
                 <i
                     className="fas fa-trash icon"
                     style={{ color: 'red' }}
