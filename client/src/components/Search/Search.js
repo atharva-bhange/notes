@@ -25,9 +25,9 @@ function Search({ searchNotes }) {
     });
 
     return (
-        <Form onSubmit={searchForm.handleSubmit}>
+        <form onSubmit={searchForm.handleSubmit}>
             <Form.Row>
-                <Col>
+                <Col xs="auto">
                     <Form.Control
                         id="search"
                         name="search"
@@ -37,13 +37,13 @@ function Search({ searchNotes }) {
                         placeholder="Search"
                     />
                 </Col>
-                <Col>
+                <Col xs="auto">
                     <Button type="submit" variant="secondary">
                         <i class="fas fa-search"></i>
                     </Button>
                 </Col>
             </Form.Row>
-        </Form>
+        </form>
     );
 }
 

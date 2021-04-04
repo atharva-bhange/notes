@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 import Search from '../Search';
-
 import Note from './Note';
 import './HomePage.scss';
 import { getAllNotes } from '../../action';
-import { Button } from 'react-bootstrap';
 
 function HomePage({ getAllNotes, notes }) {
     useEffect(getAllNotes, [getAllNotes]);
@@ -29,8 +29,12 @@ function HomePage({ getAllNotes, notes }) {
         <div className="homepage">
             <div className="heading">
                 <div className="header">Notes</div>
-
                 <Search />
+                <Link to="/create">
+                    <Button variant="success" className="ml-2">
+                        <i class="fas fa-plus"></i>
+                    </Button>
+                </Link>
             </div>
             {renderNotes()}
         </div>
