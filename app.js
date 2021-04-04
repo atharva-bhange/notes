@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.json({ limit: '10kb' })); // body parser
 
-// app.use(express.static(`${__dirname}/public`)); // serving static files
+app.use('/resourses', express.static(`${__dirname}/public`)); // serving static files
 
 // Mounting Routers
 

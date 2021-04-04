@@ -1,0 +1,28 @@
+@import '../../default.scss';
+
+.note-detail {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    .description {
+        font-weight: 500;
+        font-size: 1rem;
+        color: lightgrey;
+    }
+
+    .image {
+        min-width: 30rem;
+
+        img {
+            width: 100%;
+        }
+    }
+}

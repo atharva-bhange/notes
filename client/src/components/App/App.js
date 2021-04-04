@@ -9,6 +9,7 @@ import history from '../../history';
 import HomePage from '../HomePage';
 import CreateForm from '../CreateForm';
 import reducers from '../../reducer';
+import NoteDetail from '../NoteDetail';
 
 function App() {
     const store = createStore(
@@ -29,7 +30,9 @@ function App() {
                         </Route>
                         <Route exact path="/update/:id"></Route>
                         <Route exact path="/delete/:id"></Route>
-                        <Route exact path="/note/:id"></Route>
+                        <Route exact path="/note/:id">
+                            <NoteDetail />
+                        </Route>
                     </Switch>
                 </Router>
             </Provider>
