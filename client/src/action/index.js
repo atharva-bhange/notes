@@ -52,3 +52,14 @@ export const createNote = (formValues) => async () => {
         })
         .call();
 };
+
+export const deleteNote = (id) => async (dispatch) => {
+    new apiHandler(api.delete(`/notes/${id}`))
+        .code(204, () => {
+            dispatch({ type: actionTypes.DELETE_NOTE, payload: id });
+        })
+        .onError((err) => {
+            console.log(err);
+        })
+        .call();
+};

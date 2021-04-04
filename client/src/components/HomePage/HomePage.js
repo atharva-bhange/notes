@@ -20,6 +20,7 @@ function HomePage({ getAllNotes, notes }) {
                     key={note._id}
                     title={note.title}
                     description={note.description}
+                    id={note._id}
                 />
             ));
         }
