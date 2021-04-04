@@ -16,6 +16,9 @@ app.use(express.json({ limit: '10kb' })); // body parser
 
 app.use('/resourses', express.static(`${__dirname}/public`)); // serving static files
 
+if (process.env.NODE_ENV === 'production')
+    app.use('/', express.static(`${__dirname}/client/build`)); // serving static files
+
 // Mounting Routers
 
 app.use('/api/v1/notes', noteRouter);
